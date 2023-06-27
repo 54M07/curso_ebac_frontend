@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="/formulário/style.css">
+</head>
+<body>
+  <form>
+    <label for="campoA">Campo A:</label>
+    <input type="number" id="campoA" required><br><br>
+    
+    <label for="campoB">Campo B:</label>
+    <input type="number" id="campoB" required><br><br>
+    
+    <input type="button" value="Enviar" onclick="validarFormulario()">
+  </form>
+  
+  <div id="mensagem"></div>
+  
+  <script>
+    function validarFormulario() {
+      var campoA = parseFloat(document.getElementById('campoA').value);
+      var campoB = parseFloat(document.getElementById('campoB').value);
+      var mensagem = document.getElementById('mensagem');
+      
+      if (campoB > campoA) {
+        mensagem.innerHTML = "Parabéns Formulário válido!";
+        mensagem.style.color = "green";
+      } else {
+        mensagem.innerHTML = "Número B deve ser maior que o número A!";
+        mensagem.style.color = "red";
+      }
+    }
+  </script>
+</body>
+
+</html>
